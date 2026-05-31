@@ -31,9 +31,3 @@ API REST para gestión de tareas con autenticación JWT desarrollada con Spring 
 | GET | `/api/tasks` | Listar todas las tareas | Sí (Bearer token) |
 | POST | `/api/tasks` | Crear una nueva tarea | Sí (Bearer token) |
 
-### Pasos
-
-1. Clonar el repositorio
-   ```bash
-   git clone https://github.com/Alcardro/taskflow-backend.git
-   cd taskflow-backend
