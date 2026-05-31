@@ -2,6 +2,18 @@
 
 API REST para gestión de tareas con autenticación JWT desarrollada con Spring Boot.
 
+# Estructura del Proyecto
+
+src/
+├── main/java/com/taskflow/backend/
+│   ├── api/               # Controladores, DTOs, handlers de excepciones
+│   ├── application/       # Servicios (lógica de negocio)
+│   ├── domain/            # Entidades JPA y excepciones de dominio
+│   ├── infrastructure/    # Repositorios, seguridad, configuraciones
+│   └── shared/            # Utilidades
+├── test/java/             # Pruebas unitarias y de integración
+└── resources/             # application.properties
+
 ## Tecnologías utilizadas
 
 - Java 17
