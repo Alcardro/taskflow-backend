@@ -31,12 +31,6 @@ API REST para gestión de tareas con autenticación JWT desarrollada con Spring 
 | GET | `/api/tasks` | Listar todas las tareas | Sí (Bearer token) |
 | POST | `/api/tasks` | Crear una nueva tarea | Sí (Bearer token) |
 
-## Cómo ejecutar el proyecto
-
-### Requisitos previos
-- Java 17 instalado
-- Maven (opcional, el proyecto incluye wrapper)
-
 ### Pasos
 
 1. Clonar el repositorio
