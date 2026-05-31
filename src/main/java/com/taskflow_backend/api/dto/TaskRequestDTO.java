@@ -1,10 +1,13 @@
 package com.taskflow_backend.api.dto;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 
 public class TaskRequestDTO {
 
     @NotBlank(message = "El titulo es obligatorio")
+    @Schema(example = "Comprar leche", description = "Título de la tarea")
     private String title;
+    @Schema(example = "Ir al supermercado y comprar leche deslactosada", description = "Descripción detallada (opcional)")
     private String description;
 
     public TaskRequestDTO() {

@@ -1,5 +1,6 @@
 package com.taskflow_backend.domain.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -21,6 +22,7 @@ public class Task {
     private Boolean completed = false;
 
     @Column(name = "created_at")
+    @Schema(example = "2025-05-31T15:30:00Z", description = "Fecha de creación en formato ISO 8601")
     private LocalDateTime createdAt;
 
     //CONSTRUCTOR VACIO OBLIGATORIO PARA JPA

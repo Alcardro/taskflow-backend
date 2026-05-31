@@ -5,6 +5,8 @@ import com.taskflow_backend.api.dto.AuthResponseDTO;
 import com.taskflow_backend.domain.model.User;
 import com.taskflow_backend.infrastructure.repository.UserRepository;
 import com.taskflow_backend.infrastructure.security.JwtUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name = "Autenticación", description = "Endpoints para registro e inicio de sesión")
 public class AuthController {
 
     @Autowired
@@ -33,6 +36,7 @@ public class AuthController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/login")
+    @Operation(summary = "Iniciar sesión", description = "Autentica al usuario y devuelve un token JWT")
     public AuthResponseDTO login(@RequestBody AuthRequestDTO request) throws Exception {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
@@ -43,6 +47,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
+    @Operation(summary = "Registrar nuevo usuario")
     public String register(@RequestBody AuthRequestDTO request) {
         if (userRepository.findByUsername(request.getUsername()).isPresent()) {
             throw new RuntimeException("Usuario ya existe");
