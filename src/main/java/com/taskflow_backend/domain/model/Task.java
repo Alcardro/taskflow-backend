@@ -1,4 +1,4 @@
-package com.taskflow_backend.domain;
+package com.taskflow_backend.domain.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

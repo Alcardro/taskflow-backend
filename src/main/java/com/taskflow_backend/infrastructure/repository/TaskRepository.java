@@ -1,6 +1,6 @@
-package com.taskflow_backend.repository.infrastructure;
+package com.taskflow_backend.infrastructure.repository;
 
-import com.taskflow_backend.domain.Task;
+import com.taskflow_backend.domain.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
