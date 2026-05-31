@@ -1,6 +1,5 @@
 package com.taskflow_backend.infrastructure.security.config;
 
-
 import com.taskflow_backend.application.service.CustomUserDetailsService;
 import com.taskflow_backend.infrastructure.security.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +47,6 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
-        // Permitir frames de H2 console
         http.headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()));
 
         return http.build();
